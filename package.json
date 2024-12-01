@@ -1,0 +1,16 @@
+{
+  "name": "trem-packer",
+  "version": "1.0.0",
+  "description": "Pack directory into .trem file",
+  "main": "index.js",
+  "bin": {
+    "trem-packer": "./index.js"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.10"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
