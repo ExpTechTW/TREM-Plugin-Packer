@@ -17,7 +17,6 @@ const EXCLUDED_FILES = ['LICENSE', 'README.md', 'package-lock.json', 'package.js
 
 const targetDir = process.argv[2] || '.';
 
-// 創建 readline interface
 const rl = readline.createInterface({
  input: process.stdin,
  output: process.stdout
@@ -41,7 +40,6 @@ async function packTrem(directory) {
      process.exit(1);
    }
 
-   // 顯示插件信息並等待確認
    console.log('\n' + colors.yellow + 'Plugin Information:' + colors.reset);
    console.log(`Name: ${info.name}`);
    console.log(`Version: ${info.version}`);
@@ -53,7 +51,6 @@ async function packTrem(directory) {
      process.exit(0);
    }
 
-   // 檢查 signature.json
    const signaturePath = path.join(directory, 'signature.json');
    if (!fs.existsSync(signaturePath)) {
      const createSignature = await question(colors.yellow + '\nsignature.json not found. Continue without it? (y/N): ' + colors.reset);
