@@ -125,7 +125,7 @@ const EXCLUDED_FILES = [
 const EXCLUDED_PATTERNS = [
   /^\.git/,
   /^\.vscode/,
-  /^eslintrc./,
+  /^\.?eslintrc/,
   /^node_modules\/(\.bin|.*-sort.*)/,
 ];
 
