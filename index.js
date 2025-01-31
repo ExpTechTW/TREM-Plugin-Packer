@@ -89,6 +89,7 @@ const EXCLUDED_FILES = [
 const EXCLUDED_PATTERNS = [
   /^\.git/,
   /^\.vscode/,
+  /^node_modules\/eslint/,
   /^node_modules\/(\.bin|eslint.*|@eslint.*|.*-eslint.*|.*-sort.*)/,
 ];
 
