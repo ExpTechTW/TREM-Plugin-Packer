@@ -221,10 +221,6 @@ async function packTrem(directory) {
         const stat = fs.statSync(filePath);
         const relativePath = path.join(zipPath, file);
 
-        // 加入除錯訊息
-        console.log(colors.yellow + `檢查文件: ${relativePath}` + colors.reset);
-        console.log(colors.yellow + `是否應該排除: ${shouldExclude(relativePath)}` + colors.reset);
-
         if (file.startsWith("__MACOSX") || shouldExclude(relativePath) || file.endsWith(".trem"))
           return;
 
