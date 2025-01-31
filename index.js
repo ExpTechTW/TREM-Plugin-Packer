@@ -24,15 +24,13 @@ const EXCLUDED_FILES = [
   ".DS_Store",
   ".vscode",
 
-  "node_modules/eslint",
-  "node_modules/eslint-scope",
-  "node_modules/eslint-visitor-keys",
-  "node_modules/eslint-plugin-require-sort",
   "node_modules/@eslint",
-
-  // 原本就有的其他排除項目
+  "node_modules/@eslint-community",
+  "node_modules/@humanwhocodes",
   "node_modules/doctrine",
   "node_modules/escape-string-regexp",
+  "node_modules/eslint",
+  "node_modules/eslint-plugin-require-sort",
   "node_modules/eslint-scope",
   "node_modules/eslint-visitor-keys",
   "node_modules/espree",
@@ -97,6 +95,12 @@ const EXCLUDED_FILES = [
 const EXCLUDED_PATTERNS = [
   /^\.git/,
   /^\.vscode/,
+  /^node_modules\/eslint/,
+  /^node_modules\/@eslint/,
+  /^node_modules\/@eslint-community/,
+  /^node_modules\/@humanwhocodes/,
+  /^node_modules\/eslint-/,
+  /^node_modules\/.*-eslint/,
   /^node_modules\/(\.bin|.*-sort.*)/,
 ];
 
