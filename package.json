@@ -7,7 +7,9 @@
     "trem-packer": "./index.js"
   },
   "dependencies": {
-    "adm-zip": "^0.5.10"
+    "adm-zip": "^0.5.10",
+    "eslint": "^8.56.0",
+    "eslint-plugin-require-sort": "^1.3.0"
   },
   "type": "commonjs",
   "engines": {
