@@ -190,18 +190,21 @@ async function packTrem(directory) {
       files.forEach(file => {
         const filePath = path.join(currentPath, file);
         const stat = fs.statSync(filePath);
+        const relativePath = path.join(zipPath, file);
 
-        if (file.startsWith("__MACOSX") || shouldExclude(file) || file.endsWith(".trem"))
+        // 加入除錯訊息
+        console.log(colors.yellow + `檢查文件: ${relativePath}` + colors.reset);
+        console.log(colors.yellow + `是否應該排除: ${shouldExclude(relativePath)}` + colors.reset);
+
+        if (file.startsWith("__MACOSX") || shouldExclude(relativePath) || file.endsWith(".trem"))
           return;
 
-
         if (stat.isDirectory())
-          addFilesToZip(filePath, path.join(zipPath, file));
+          addFilesToZip(filePath, relativePath);
         else {
           const fileData = fs.readFileSync(filePath);
-          const zipFilePath = path.join(zipPath, file);
-          zip.addFile(zipFilePath, fileData);
-          console.log(colors.blue + `Adding: ${zipFilePath}` + colors.reset);
+          zip.addFile(relativePath, fileData);
+          console.log(colors.blue + `Adding: ${relativePath}` + colors.reset);
         }
       });
     }
